@@ -26,7 +26,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 /**
  * depth - a function that returns the depth of a given node in a binary tree.
- * 
+ *
  * @tree: is a pointer to the node to measure the depth of.
  *
  * Return: the depth of node
