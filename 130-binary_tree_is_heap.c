@@ -9,7 +9,7 @@ size_t binary_tree_size(const binary_tree_t *tree);
 /**
  * binary_tree_is_heap - Checks if a binary tree is a valid Max Binary Heap.
  *
- * @tree: A pointer to the root node of the tree to check.
+ * @tree: A pointer to the node of the tree
  *
  * Return: 1 if tree is a valid Max Binary Heap, and 0 otherwise.
  */
