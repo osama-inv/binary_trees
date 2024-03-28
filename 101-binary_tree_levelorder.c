@@ -8,7 +8,8 @@ void free_queue(levelorder_queue_t *head);
 void pop(levelorder_queue_t **head);
 
 /**
- * binary_tree_levelorder - a function that goes through a bin-tree by level-order traversal.
+ * binary_tree_levelorder - a function that goes through a bin-tree,
+ *	by level-order traversal.
  *
  * @tree: is a pointer to the root node of the tree to traverse.
  * @func: is a pointer to a function to call for each node.
