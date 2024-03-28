@@ -8,7 +8,8 @@ void push(binary_tree_t *node, levelorder_queue_t *head,
 void pop(levelorder_queue_t **head);
 
 /**
- * binary_tree_is_complete - a function that checks if a binary tree is complete.
+ * binary_tree_is_complete - a function that checks,
+ *	if a binary tree is complete.
  *
  * @tree: is a pointer to the root node of the tree to check.
  *
