@@ -7,7 +7,7 @@ int successor(bst_t *node);
 void bal(avl_t **tree);
 
 /**
- * avl_remove - Removes a node from an AVL tree.
+ * avl_remove - Removes a node from an AVL tree
  *
  * @root: A pointer to the root node of the tree for removing a node.
  * @value: The value to remove in the tree.
