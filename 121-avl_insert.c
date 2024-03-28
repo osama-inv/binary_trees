@@ -33,7 +33,8 @@ avl_t *avl_insert(avl_t **tree, int value)
 }
 
 /**
- * avl_insert_recursive - a function that inserts a value into an AVL tree recursively.
+ * avl_insert_recursive - a function that inserts a value into,
+ *	an AVL tree recursively.
  *
  * @tree: is a double pointer to the root node of the AVL tree to insert into.
  * @parent: is the parent node of the current working node.
@@ -70,18 +71,12 @@ avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 		}
 	}
 	else
-	{
 		return (*tree);
-	}
 	bfactor = balance(*tree);
 	if (bfactor > 1 && (*tree)->left->n > value)
-	{
 		*tree = binary_tree_rotate_right(*tree);
-	}
 	else if (bfactor < -1 && (*tree)->right->n < value)
-	{
 		*tree = binary_tree_rotate_left(*tree);
-	}
 	else if (bfactor > 1 && (*tree)->left->n < value)
 	{
 		(*tree)->left = binary_tree_rotate_left((*tree)->left);
@@ -98,7 +93,8 @@ avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 /**
  * balance - a function that measures the balance factor of a binary tree.
  *
- * @tree: is a pointer to the root node of the tree to measure the balance factor.
+ * @tree: is a pointer to the root node of the tree,
+ *	to measure the balance factor.
  *
  * Return: If tree is NULL return 0,
  *	otherwise return the balance factor
