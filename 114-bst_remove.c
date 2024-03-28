@@ -8,7 +8,8 @@ bst_t *inorder_successor(bst_t *root);
 /**
  * bst_remove - a function that removes a node from a Binary Search Tree.
  *
- * @root: is a pointer to the root node of the tree where you will remove a node.
+ * @root: is a pointer to the root node of the tree,
+ *	where you will remove a node.
  * @value: is the value to remove in the tree
  *
  * Return: a pointer to the new root node of the tree after removing.
