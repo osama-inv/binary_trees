@@ -23,7 +23,8 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 }
 
 /**
- * aux_sort - a function that creates the tree using the half element of the array.
+ * aux_sort - a function that creates the tree,
+ *	using the half element of the array.
  *
  * @parent: is the parent of the node to create.
  * @array: is a sorted array.
