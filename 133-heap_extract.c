@@ -4,6 +4,34 @@ int heap_extract(heap_t **root);
 void recurse_extract(heap_t *tree);
 heap_t *max(heap_t *tree);
 /**
+ * recurse_extract - extracts the max.
+ *
+ * @tree: pointer to the root of the tree.
+ */
+void recurse_extract(heap_t *tree)
+{
+	heap_t *sub_max, *right_max = NULL;
+
+	if (!tree->left)
+		return;
+	sub_max = max((tree)->left);
+	if (tree->right)
+		right_max = max(tree->right);
+	if (right_max && right_max->n > sub_max->n)
+		sub_max = right_max;
+	tree->n = sub_max->n;
+	if (!sub_max->left)
+	{
+		if (sub_max->parent && sub_max->parent->left == sub_max)
+			sub_max->parent->left = NULL;
+		if (sub_max->parent && sub_max->parent->right == sub_max)
+			sub_max->parent->right = NULL;
+		free(sub_max);
+	}
+	else
+		recurse_extract(sub_max);
+}
+/**
  * heap_extract - Extracts the root node of a Max Binary Heap.
  *
  * @root: A double pointer to the root node of heap.
@@ -29,35 +57,6 @@ int heap_extract(heap_t **root)
 }
 
 /**
- * recurse_extract - Recursively extracts the max from the tree.
- *
- * @tree: The pointer to the root of the tree.
- */
-void recurse_extract(heap_t *tree)
-{
-	heap_t *sub_max, *right_max = NULL;
-
-	if (!tree->left)
-		return;
-	sub_max = max((tree)->left);
-	if (tree->right)
-		right_max = max(tree->right);
-	if (right_max && right_max->n > sub_max->n)
-		sub_max = right_max;
-	tree->n = sub_max->n;
-	if (!sub_max->left)
-	{
-		if (sub_max->parent && sub_max->parent->left == sub_max)
-			sub_max->parent->left = NULL;
-		if (sub_max->parent && sub_max->parent->right == sub_max)
-			sub_max->parent->right = NULL;
-		free(sub_max);
-	}
-	else
-		recurse_extract(sub_max);
-}
-
-/**
  * max - Finds the maximum node in a tree.
  *
  * @tree: The pointer to the root of the tree.
@@ -79,7 +78,9 @@ heap_t *max(heap_t *tree)
 	{
 		right_max = max(tree->right);
 		if (right_max->n > curr_max->n)
+		{
 			curr_max = right_max;
+		}
 		else
 			curr_max = tree;
 	}
